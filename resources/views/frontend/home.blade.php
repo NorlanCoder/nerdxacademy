@@ -1,7 +1,5 @@
 @extends('frontend.master')
 
-@include('frontend.partials.light-header')
-
 @section('presentation')
 <section class="h-auto lg:h-[calc(100vh-90px)] px-[30px] md:px-[61px] flex flex-col justify-center gap-y-5 relative pb-8 lg:pt-0 pt-6">
     <div class="lg:h-[100%-60px] flex flex-col justify-between items-center lg:flex-row xl:mb-0">
@@ -112,7 +110,7 @@
             </div>
 
             <div class="flex flex-col bg-white rounded-t-lg shadow-xl">
-                <a href="./designer.php">
+                <a href="./designer.html">
                     <div class="img h-[310px] bg-first-formation-patern rounded-t-xl" style="
                     background-image: url('./assets/Flyers_Graphisme2.webp');
                     background-size: cover;
@@ -210,19 +208,19 @@
                   "></div>
                     <div class="text flex flex-col px-6 my-3 justify-center">
                         <h1 class="title my-2 xl:text-left text-center text-nerdx-blue text-2xl font-extrabold">
-                            {{$formation->label}}
+                            {{$formation->name}}
                         </h1>
                         <div class="details flex mt-2 justify-center xl:space-x-10 md:space-x-2 space-x-2">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-regular fa-calendar-days text-2xl text-nerdx-green"></i>
                                 <h4 class="font-medium text-sm whitespace-nowrap">
-                                    {{ $formation->duration }}
+                                    {{ $formation->date }}
                                 </h4>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-stopwatch text-2xl text-nerdx-green"></i>
                                 <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    19h-21h
+                                    {{ $formation->time }}
                                 </h4>
                             </div>
                             <div class="flex items-center space-x-2">
@@ -233,7 +231,7 @@
                             </div>
                         </div>
                         <div class="button flex mt-4 justify-center">
-                            <button id="inscription_button" onclick="openModal('modal','Developpement-web')" class="btn-action bg-nerdx-blue px-8">
+                            <button id="inscription_button" onclick="openModal('modal','{{$formation->name}}')" class="btn-action bg-nerdx-blue px-8">
                                 S'inscrire
                             </button>
                         </div>

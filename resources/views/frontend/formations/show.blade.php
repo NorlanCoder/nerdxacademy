@@ -42,7 +42,7 @@
         @include('frontend.partials.dark-header')
         <div class="bg-white text-black mt-4 md:mt-0">
             <div class="h-auto md:py-4 py-2 inline-flex md:text-base text-xs px-[24px] md:px-[61px] md:gap-x-4 gap-x-2">
-                <p><a href="./formation.php" class="cursor-pointer">Formations</a></p>
+                <p><a href="{{route('home')}}" class="cursor-pointer">Formations</a></p>
                 <p>></p>
                 <p>Développeur WordPress</p>
             </div>
@@ -85,7 +85,7 @@
                     {!! $formation->content !!}
                 </div>
                 <div class="mt-4 md:relative fixed bottom-0 left-0 md:block flex justify-center md:w-auto w-full h-15 md:bg-transparent bg-nerdx-blue">
-                    <a href="" onclick="openModal('modal','Developpement-web')" class="btn-action my-3">S'inscrire</a>
+                    <a href="" onclick="openModal('modal','{{ $formation->name }}')" class="btn-action my-3">S'inscrire</a>
                 </div>
             </div>
             <div class="flex flex-col lg:w-[50%] lg:justify-end justify-center text-left">
@@ -115,7 +115,7 @@
             </a>
         </div>
         <!-- Modal -->
-        <div class="fixed top-0 left-0 hidden flex-row items-center justify-center h-screen bg-gray-800/30 w-screen overflow-y-auto transition-opacity duration-5000 z-50" id="modal">
+        <div class="fixed top-0 left-0 hidden flex-row items-center justify-center h-screen bg-gray-800/30 w-screen overflow-y-auto z-50" id="modal">
             <div class="absolute right-10 top-10 m-auto cursor-pointer" onclick="closeModal('modal')">
                 <span class="bg-white rounded-full w-10 h-10 flex justify-center items-center">
                     <i class="fa fa-close text-3xl text-red-500"></i>
@@ -131,7 +131,8 @@
                     <input type="text" name="first-name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required />
                 </div>
                 <div class="relative z-0 w-full mb-7 group">
-                    <label for="phone-number" class="text-gray-800 font-semibold">Numéro de Télephone <span class="text-red-500">*</span></label>
+                    <label for="phone-number" class="text-gray-800 font-semibold">Numéro de Télephone (Whatsapp)
+                        <span class="text-red-500">*</span></label>
                     <input type="number" name="phone-number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required />
                 </div>
                 <div class="relative z-0 w-full mb-7 group">
@@ -139,36 +140,7 @@
                     <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre email" required />
                 </div>
 
-                <button type="submit" class="poppins-light border border-green-600 bg-green-600 rounded-lg p-4 px-8">
-                    Soumettre
-                </button>
-            </form>
-        </div>
-        <div class="fixed top-0 left-0 hidden flex-row items-center justify-center h-screen bg-gray-800/30 w-screen overflow-y-auto z-50" id="modal1">
-            <div class="absolute right-10 top-10 m-auto cursor-pointer" onclick="closeModal('modal1')">
-                <span class="bg-white rounded-full w-10 h-10 flex justify-center items-center">
-                    <i class="fa fa-close text-3xl text-red-500"></i>
-                </span>
-            </div>
-            <form class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="traitement.php" method="post">
-                <div class="relative z-0 w-full mb-7 group">
-                    <label for="last-name" class="text-gray-800 font-semibold">Nom de famille <span class="text-red-500">*</span></label>
-                    <input type="text" name="last-name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required />
-                </div>
-                <div class="relative z-0 w-full mb-7 group">
-                    <label for="first-name" class="text-gray-800 font-semibold">Prénom <span class="text-red-500">*</span></label>
-                    <input type="text" name="first-name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required />
-                </div>
-                <div class="relative z-0 w-full mb-7 group">
-                    <label for="phone-number" class="text-gray-800 font-semibold">Numéro de Télephone <span class="text-red-500">*</span></label>
-                    <input type="number" name="phone-number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required />
-                </div>
-                <div class="relative z-0 w-full mb-7 group">
-                    <label for="email" class="text-gray-800 font-semibold">E-mail <span class="text-red-500">*</span></label>
-                    <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre email" required />
-                </div>
-
-                <div class="relative z-0 w-full mb-7 group">
+                <div id="formation-field" class="relative z-0 w-full mb-7 group">
                     <label for="formation" class="text-gray-800 font-semibold">
                         Choisissez votre formation préféré
                         <span class="text-red-500">*</span>
@@ -179,10 +151,13 @@
                         </svg>
                     </div>
                     <select id="formation" name="formation" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                        <option selected>Veuillez sélectionner</option>
+                        <option value="default" selected>Veuillez sélectionner</option>
                         <option value="graphisme">Graphisme</option>
                         <option value="Developpement-web">Développement web</option>
                         <option value="marketing">Marketing</option>
+                        @foreach($formation_names as $formation_name)
+                        <option value="{{$formation_name->name}}">{{$formation_name->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -191,6 +166,7 @@
                 </button>
             </form>
         </div>
+
         <!-- pied de page -->
         <footer class="bg-nerdx-blue py-6">
             <div class="text-center items-center flex flex-col justify-center gap-y-4">
@@ -217,30 +193,6 @@
                 menunav.classList.add("anime-show");
             }
         });
-
-        window.openModal = function(modalId, formationValue) {
-            if (formationValue) {
-                document.getElementById('formation').value = formationValue
-            }
-            event.preventDefault();
-            document.getElementById(modalId).classList.add("animate-fadeIn");
-            document.getElementById(modalId).classList.remove("hidden");
-            document.getElementById(modalId).classList.add("flex");
-            document
-                .getElementsByTagName("body")[0]
-                .classList.add("overflow-y-hidden");
-            setTimeout(function() {
-                document.getElementById(modalId).classList.remove("animate-fadeIn");
-            }, 200);
-        };
-
-        window.closeModal = function(modalId) {
-            document.getElementById(modalId).classList.remove("flex");
-            document.getElementById(modalId).classList.add("hidden");
-            document
-                .getElementsByTagName("body")[0]
-                .classList.remove("overflow-y-hidden");
-        };
     </script>
 
 

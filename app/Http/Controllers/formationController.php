@@ -29,7 +29,8 @@ class formationController extends Controller
     public function show(Formation $formation)
     {
         return view('frontend.formations.show', [
-            'formation' => $formation
+            'formation' => $formation,
+            'formation_names' => Formation::toSelectFormat()
         ]);
     }
 
@@ -42,10 +43,9 @@ class formationController extends Controller
 
     public function store(Request $request)
     {
-        // dd('$formation');
         $request->validate([
             'label' => ['required', 'string', 'max:255'],
-            'date' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'duration' => ['required', 'string', 'max:255'],
             'format' => ['required', 'string', 'max:255'],
             'time' => ['required', 'string', 'max:255'],
@@ -61,6 +61,7 @@ class formationController extends Controller
             [
                 ...$request->only(
                     'label',
+                    'name',
                     'date',
                     'duration',
                     'format',
@@ -113,6 +114,12 @@ class formationController extends Controller
                 'content'
             )
         ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('formation_images', 'public');
+            $formation->image = $imagePath;
+            $formation->save();
+        }
 
         return redirect()->route('index')->with('success', 'Formation modifiée avec succès');
     }

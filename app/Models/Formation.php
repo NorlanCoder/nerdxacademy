@@ -10,4 +10,10 @@ class Formation extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public static function toSelectFormat()
+    {
+        return self::select('name')
+            ->get();
+    }
 }

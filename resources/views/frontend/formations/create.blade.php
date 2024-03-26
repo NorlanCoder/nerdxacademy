@@ -53,9 +53,15 @@
         <form class="m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="{{ route('formation.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="relative z-0 w-2/3 mb-7 group">
-                <label for="last-name" class="text-gray-800 font-semibold">Nom de la formation <span class="text-red-500">*</span></label>
-                <input type="text" name="label" id="label" class="block py-2.5 px-4 w-full text-sm text-gray-900 bg-transparent border-1 rounded-md border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="exemple: Développement Wordpress" required />
+                <label for="last-name" class="text-gray-800 font-semibold">Intitulé de la formation <span class="text-red-500">*</span></label>
+                <input type="text" name="label" id="label" class="block py-2.5 px-4 w-full text-sm text-gray-900 bg-transparent border-1 rounded-md border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="exemple: Formation en Développement Wordpress" required />
                 <x-input-error :messages="$errors->get('label')" class="mt-2" />
+            </div>
+
+            <div class="relative z-0 w-2/3 mb-7 group">
+                <label for="last-name" class="text-gray-800 font-semibold">Nom de la formation <span class="text-red-500">*</span></label>
+                <input type="text" name="name" id="name" class="block py-2.5 px-4 w-full text-sm text-gray-900 bg-transparent border-1 rounded-md border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="exemple: Développement Wordpress" required />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
             <div class="relative z-0 w-2/3 mb-7 group">
