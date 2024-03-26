@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-offre {
+    @apply flex text-nowrap items-center w-auto lg:h-max  md:ml-0 mr-4 p-4 lg:px-14 border-2 border-nerdx-green text-[9px] lg:text-sm md:w-max text-black font-light rounded-full shadow-sm hover:bg-nerdx-green hover:text-white focus:outline-none focus:ring focus:ring-nerdx-green focus:ring-opacity-75;
+  }
+
+  .btn-action {
+    @apply py-3 text-nowrap px-5 w-max border-2 border-nerdx-green bg-nerdx-green text-white font-light rounded-[10px] shadow-md  focus:outline-none focus:ring focus:ring-nerdx-green focus:ring-opacity-75;
+  }
+
+  .dot {
+    @apply inline-block w-[0.8vw] h-[0.8vw] bg-nerdx-green rounded-full;
+  }
+}
+
+@media all and (min-width: 1023px) {
+  .scrollable-content::-webkit-scrollbar {
+    height: 0.2em;
+    width: 10px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .scrollable-content::-webkit-scrollbar {
+    height: 0em;
+    width: 10px;
+  }
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../assets/police/Poppins-Regular.otf);
+}
+
+@font-face {
+  font-family: poppins-light;
+  src: url(../assets/police/Poppins-Light.otf);
+}
+
+.poppins-light {
+  font-family: poppins-light, "sans-serif";
+}
+
+.poppins-regular {
+  font-family: poppins, "sans-serif";
+}
+
+body {
+  font-family: poppins, "sans-serif";
+  overflow-x: hidden;
+}
+
+@keyframes show {
+  0% {
+    left: -1000px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes hide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1000px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.5s ease-out;
+}
+
+.anime-show {
+  animation-name: show;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+.anime-hide {
+  animation-name: hide;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+.scrollable-content {
+  overflow-x: auto;
+  /* More presentational CSS */
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+/* .scrollable-content::-webkit-scrollbar {
+  height: 0em;
+  width: 10px;
+} */
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.664);
+}
+
+body::-webkit-scrollbar-thumb,
+.scrollable-content::-webkit-scrollbar-thumb {
+  background-color: #53b369a9;
+  outline: 1px solid #444;
+}
