@@ -106,7 +106,7 @@
         @yield('formations')
 
         <div class="whatsapp-button fixed bottom-10 z-50 right-0 md:pr-1 rounded-s-3xl bg-green-600" class="w-12">
-            <a href="https://wa.me/66633357" target="_blank">
+            <a href="https://wa.me/+22966633357" target="_blank">
                 <img class="w-12" src="./assets/3225179_app_logo_media_popular_social_icon.png" alt="" srcset="" />
             </a>
         </div>
