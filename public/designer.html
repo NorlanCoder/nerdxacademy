@@ -409,9 +409,10 @@
       </div>
       <form
         class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center"
-        action="traitement.php"
+        action="{{route('formation.register')}}"
         method="post"
       >
+      @crsf
         <div class="relative z-0 w-full mb-7 group">
           <label for="last-name" class="text-gray-800 font-semibold"
             >Nom de famille <span class="text-red-500">*</span></label
@@ -490,9 +491,10 @@
     </div>
     <form
       class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center"
-      action="traitement.php"
+      action="{{route('formation.register')}}"
       method="post"
     >
+    @csrf
       <div class="relative z-0 w-full mb-7 group">
         <label for="last-name" class="text-gray-800 font-semibold"
           >Nom de famille <span class="text-red-500">*</span></label

@@ -122,8 +122,9 @@
             </span>
         </div>
         <form class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="{{route('formation.register')}}" method="post">
+            @csrf
             <div class="relative z-0 w-full mb-7 group">
-                @csrf
+
                 <label for="last-name" class="text-gray-800 font-semibold">Nom de famille <span class="text-red-500">*</span></label>
                 <input type="text" name="last_name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required />
                 <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
