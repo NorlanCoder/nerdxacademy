@@ -121,19 +121,23 @@
                     <i class="fa fa-close text-3xl text-red-500"></i>
                 </span>
             </div>
-            <form class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="traitement.php" method="post">
+            <form class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="{{route('formation.register')}}" method="post">
                 <div class="relative z-0 w-full mb-7 group">
+                    @crsf
                     <label for="last-name" class="text-gray-800 font-semibold">Nom de famille <span class="text-red-500">*</span></label>
-                    <input type="text" name="last-name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required />
+                    <input type="text" name="last_name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required />
+                    <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
                 </div>
                 <div class="relative z-0 w-full mb-7 group">
                     <label for="first-name" class="text-gray-800 font-semibold">Prénom <span class="text-red-500">*</span></label>
-                    <input type="text" name="first-name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required />
+                    <input type="text" name="first_name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required />
+                    <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
                 </div>
                 <div class="relative z-0 w-full mb-7 group">
                     <label for="phone-number" class="text-gray-800 font-semibold">Numéro de Télephone (Whatsapp)
                         <span class="text-red-500">*</span></label>
-                    <input type="number" name="phone-number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required />
+                    <input type="number" name="phone_number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required />
+                    <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
                 </div>
                 <div class="relative z-0 w-full mb-7 group">
                     <label for="email" class="text-gray-800 font-semibold">E-mail <span class="text-red-500">*</span></label>
@@ -159,6 +163,7 @@
                         <option value="{{$formation_name->name}}">{{$formation_name->name}}</option>
                         @endforeach
                     </select>
+                    <x-input-error :messages="$errors->get('formation')" class="mt-2" />
                 </div>
 
                 <button type="submit" class="poppins-light border text-white border-green-600 bg-green-600 rounded-lg p-4 px-8">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\formationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [formationController::class, 'home']);
@@ -9,6 +10,11 @@ Route::get('/', [formationController::class, 'home']);
 Route::get('/home', [formationController::class, 'home'])->name('home');
 
 Route::get('/formations/show/{formation}', [formationController::class, 'show'])->name('formation.show');
+
+Route::post('/formation/register', [registerController::class, 'store'])->name('formation.register');
+
+Route::get('/formation/register/confirmation', [registerController::class, 'confirmation'])->name('formation.register.confirmation');
+
 
 Route::middleware('auth')->group(function () {
 

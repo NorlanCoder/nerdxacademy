@@ -4,7 +4,7 @@
             <img src="{{asset('assets/logo2.webp')}}" alt="Nerdx Academy Logo" class="h-[65px]" />
         </a>
     </div>
-    <nav class="items-center  md:gap-x-12 hidden lg:flex">
+    <nav class="items-center gap-x-10 hidden lg:flex">
         @auth
         <a href="{{route('index')}}" class="text-lg poppins-light">Admin</a>
         @endauth
