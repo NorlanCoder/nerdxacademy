@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('dist/main.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
+    <script src="https://cdn.kkiapay.me/k.js"></script>
+
 
     <!-- Meta Pixel Code -->
     <script>
@@ -100,6 +102,11 @@
                 <i class="fa-solid fa-bars text-4xl cursor-pointer text-nerdx-green"></i>
             </div>
         </header>
+        @if(session('success'))
+        <div class="p-4 mb-1 text-sm max-w-7xl mt-1 mx-auto text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+            <span class="font-medium">{{ session('success') }}</span>
+        </div>
+        @endif
 
         @yield('presentation')
 
@@ -121,28 +128,27 @@
                 <i class="fa fa-close text-3xl text-red-500"></i>
             </span>
         </div>
-        <form class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center" action="{{route('formation.register')}}" method="post">
-            @csrf
+        <div class="w-11/12 lg:w-1/3 m-auto bg-white border px-16 py-16 border-gray-200 rounded-lg self-center">
             <div class="relative z-0 w-full mb-7 group">
 
                 <label for="last-name" class="text-gray-800 font-semibold">Nom de famille <span class="text-red-500">*</span></label>
-                <input type="text" name="last_name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required />
+                <input id="last_name" type="text" name="last_name" id="last-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre nom" required onkeyup="info()" />
                 <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
             </div>
             <div class="relative z-0 w-full mb-7 group">
                 <label for="first-name" class="text-gray-800 font-semibold">Prénom <span class="text-red-500">*</span></label>
-                <input type="text" name="first_name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required />
+                <input id="first_name" type="text" name="first_name" id="first-name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre prénom" required onkeyup="info()" />
                 <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
             </div>
             <div class="relative z-0 w-full mb-7 group">
                 <label for="phone-number" class="text-gray-800 font-semibold">Numéro de Télephone (Whatsapp)
                     <span class="text-red-500">*</span></label>
-                <input type="number" name="phone_number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required />
+                <input id="phone_number" type="number" name="phone_number" id="phone-number" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Tapez votre numéro de télephone" required onkeyup="info()" />
                 <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
             </div>
             <div class="relative z-0 w-full mb-7 group">
                 <label for="email" class="text-gray-800 font-semibold">E-mail <span class="text-red-500">*</span></label>
-                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre email" required />
+                <input id="email" type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder="Entrez votre email" required onkeyup="info()" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
@@ -156,22 +162,16 @@
                         <path d="M10 12l-6-6-1.41 1.41L10 14.83l7.41-7.42L16 6z" />
                     </svg>
                 </div>
-                <select id="formation" name="formation" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                <select id="formation" name="formation" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" onchange="info()">
                     <option value="default" selected>Veuillez sélectionner</option>
-                    <option value="graphisme">Graphisme</option>
-                    <option value="Developpement-web">Développement web</option>
-                    <option value="marketing">Marketing</option>
                     @foreach($formations as $formation_name)
                     <option value="{{$formation_name->name}}">{{$formation_name->name}}</option>
                     @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('formation')" class="mt-2" />
             </div>
-
-            <button type="submit" class="poppins-light border text-white border-green-600 bg-green-600 rounded-lg p-4 px-8">
-                Soumettre
-            </button>
-        </form>
+            <div id="kkia"></div>
+        </div>
     </div>
     <script>
 
@@ -262,6 +262,43 @@
             };
         });
     </script>
+
+    <script>
+        function info() {
+            var first_name = document.getElementById('first_name').value
+            console.log(first_name)
+
+            var last_name = document.getElementById('last_name').value
+            var phone_number = document.getElementById('phone_number').value
+            var email = document.getElementById('email').value
+            var formation = document.getElementById('formation').value
+            console.log(formation)
+            var data = {
+                'last_name': last_name,
+                'first_name': first_name,
+                'phone_number': phone_number,
+                'email': email,
+                'formation': formation
+            };
+
+            var kkiapayScript = document.getElementById('kkiapay_id');
+
+            document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="1000" 
+                key="b131b020ed0f11eea8be6fad86782a96"
+                position="center"
+                sandbox="true"
+                name="${first_name +' '+ last_name}"
+                data=${JSON.stringify(data)}
+                email=${email}
+                callback={{route('formation.register')}}>
+            </kkiapay-widget>`
+
+
+
+        }
+        info()
+    </script>
+
 </body>
 
 </html>

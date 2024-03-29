@@ -51,53 +51,48 @@
         <div class="relative overflow-x-auto mx-12 my-10 py-6 shadow-md sm:rounded-lg">
             <div class="flex justify-between">
                 <div class="text-left hidden lg:flex lg:flex-col">
-                    <h2 class="text-gray-700 w-auto text-4xl font-semibold">Liste des formations</h2>
+                    <h2 class="text-gray-700 w-auto text-4xl font-semibold">Liste des inscrits</h2>
                     <!-- <p class="mt-2"> Développer des concepts visuels pour des projets de communication marketing.</p> -->
                 </div>
-                <div class="flex gap-x-4">
-                    <a href="{{route('formation.registers.index')}}" class="btn-action text-lg bg-[#192740] mr-3 hover:no-underline hover:text-white flex items-center rounded poppins-light signup">Liste des inscrits</a>
-                    <a href="{{route('formation.create')}}" class="btn-action text-lg bg-[#192740] mr-3 hover:no-underline hover:text-white flex items-center rounded poppins-light signup">Ajouter une formation</a>
-                </div>
+
             </div>
             <table class="w-full my-16 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
+                            Nom
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Prenom
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Telephone
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Email
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Formation
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Durée
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Format
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Lieu
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Actions
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($formations as $formation)
+                    @foreach($registers as $register)
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $formation->label }}
+                            {{ $register->last_name }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ $formation->duration }}
+                            {{ $register->first_name }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $formation->format }}
+                            {{ $register->phone_number }}
                         </td>
                         <td class="px-6 py-4">
-                            {{ $formation->adress }}
+                            {{ $register->email }}
                         </td>
                         <td class="px-6 py-4">
-                            <a href="{{ route('formation.edit',$formation) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:no-underline  outline-none">Editer</a>
-                            <a href="{{ route('formation.show',$formation) }}" class="font-medium text-green-600 dark:text-blue-500 hover:no-underline hover:text-green-700 outline-none">Afficher</a>
-
+                            {{ $register->formation }}
                         </td>
                     </tr>
                     @endforeach

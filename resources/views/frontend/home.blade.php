@@ -36,11 +36,10 @@
 
     <!-- Button offre -->
     <div class="flex xl:justify-center w-full overflow-x-auto pl-10 lg:pl-0 scrollable-content relative h-[65px] lg:mb-0 lg:mt-10 mt-0 mb-2">
-        <a href="./developpeur.html" class="btn-offre"> Eco - Conception</a>
-        <a href="./designer.html" class="btn-offre"> Design Graphique</a>
-        <!-- <a href="" class="btn-offre"> Entrepeunariat </a> -->
-        <a href="./marketing.html" class="btn-offre"> Makerting</a>
-        <!-- <a href="" class="btn-offre"> Gestion de Projet</a> -->
+        @foreach($formations as $formation)
+        <a href="{{ route('formation.show',$formation->id) }}" class="btn-offre">{{$formation->name}}</a>
+        @endforeach
+
     </div>
     <div class="lg:hidden flex justify-center mb-2 mx-auto inset-x-0 bottom-0 w-full">
         <a href="" class="btn-action w-max text-lg poppins-light attente">Liste d'attente <i class="fa-solid fa-arrow-right text-lg pl-4"></i></a>
@@ -64,140 +63,6 @@
 
         <!-- Formations -->
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:px-32 md:px-20 sm:px-16 px-5 gap-7 mt-5">
-            <div class="flex flex-col bg-white rounded-t-lg shadow-xl">
-                <a href="./marketing.html">
-                    <div class="img h-[310px] bg-first-formation-patern rounded-t-xl" style="
-                    background-image: url('./assets/Flyers_Marketing_Digital2.webp');
-                    background-size: cover;
-                  "></div>
-                    <div class="text flex flex-col px-6 my-3 justify-center">
-                        <h1 class="title my-2 xl:text-left text-center text-nerdx-blue text-2xl font-extrabold">
-                            Marketing Digital
-                        </h1>
-                        <div class="details flex mt-2 justify-center xl:space-x-10 md:space-x-2 space-x-2">
-                            <div class="flex items-center lg:space-x-2 space-x-2">
-                                <i class="fa-regular fa-calendar-days text-2xl text-nerdx-green"></i>
-                                <h4 class="font-medium text-sm whitespace-nowrap">
-                                    20 Mars
-                                </h4>
-                            </div>
-                            <div class="flex items-center lg:space-x-2 space-x-2">
-                                <i class="fa-solid fa-stopwatch text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    19h-21h
-                                </h4>
-                            </div>
-                            <div class="flex items-center lg:space-x-2 space-x-2">
-                                <i class="fa-solid fa-user-graduate text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    +100
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="button flex mt-4 justify-center">
-                            <button id="inscription_button" onclick="openModal('modal','marketing')" class="btn-action bg-nerdx-blue px-8">
-                                S'inscrire
-                            </button>
-                        </div>
-                        <div class="flex justify-start items-center mt-2 gap-x-2">
-                            <i class="fa-solid fa-certificate text-2xl text-nerdx-green"></i>
-                            <h4 class="font-semibold text-sm whitespace-nowrap">
-                                100.000 FCFA
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="flex flex-col bg-white rounded-t-lg shadow-xl">
-                <a href="./designer.html">
-                    <div class="img h-[310px] bg-first-formation-patern rounded-t-xl" style="
-                    background-image: url('./assets/Flyers_Graphisme2.webp');
-                    background-size: cover;
-                  "></div>
-                    <div class="text flex flex-col px-6 my-3 justify-center">
-                        <h1 class="title my-2 xl:text-left text-center text-nerdx-blue text-2xl font-extrabold">
-                            Design Graphique
-                        </h1>
-                        <div class="details flex mt-2 justify-center xl:space-x-10 md:space-x-2 space-x-2">
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-regular fa-calendar-days text-2xl text-nerdx-green"></i>
-                                <h4 class="font-medium text-sm whitespace-nowrap">
-                                    20 Mars
-                                </h4>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-stopwatch text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    19h-21h
-                                </h4>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-user-graduate text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    +100
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="button flex mt-4 justify-center">
-                            <button id="inscription_button" onclick="openModal('modal','graphisme')" class="btn-action bg-nerdx-blue px-8">
-                                S'inscrire
-                            </button>
-                        </div>
-                        <div class="flex justify-start items-center mt-2 gap-x-2">
-                            <i class="fa-solid fa-certificate text-2xl text-nerdx-green"></i>
-                            <h4 class="font-semibold text-sm whitespace-nowrap">
-                                75.000 FCFA
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="flex flex-col bg-white rounded-t-lg shadow-xl">
-                <a href="./developpeur.html">
-                    <div class="img h-[310px] bg-first-formation-patern rounded-t-xl" style="
-                    background-image: url('./assets/Flyers_Ecommerce5.webp');
-                    background-size: cover;
-                  "></div>
-                    <div class="text flex flex-col px-6 my-3 justify-center">
-                        <h1 class="title my-2 xl:text-left text-center text-nerdx-blue text-2xl font-extrabold">
-                            Développement Web
-                        </h1>
-                        <div class="details flex mt-2 justify-center xl:space-x-10 md:space-x-2 space-x-2">
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-regular fa-calendar-days text-2xl text-nerdx-green"></i>
-                                <h4 class="font-medium text-sm whitespace-nowrap">
-                                    20 Mars
-                                </h4>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-stopwatch text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    19h-21h
-                                </h4>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-user-graduate text-2xl text-nerdx-green"></i>
-                                <h4 class="font-semibold text-sm whitespace-nowrap">
-                                    +100
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="button flex mt-4 justify-center">
-                            <button id="inscription_button" onclick="openModal('modal','Developpement-web')" class="btn-action bg-nerdx-blue px-8">
-                                S'inscrire
-                            </button>
-                        </div>
-                        <div class="flex justify-start items-center mt-2 gap-x-2">
-                            <i class="fa-solid fa-certificate text-2xl text-nerdx-green"></i>
-                            <h4 class="font-semibold text-sm whitespace-nowrap">
-                                150.000 FCFA
-                            </h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
             @foreach($formations as $formation)
             <div class="flex flex-col bg-white rounded-t-lg shadow-xl">

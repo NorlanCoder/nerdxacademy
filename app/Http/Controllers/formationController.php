@@ -30,7 +30,7 @@ class formationController extends Controller
     {
         return view('frontend.formations.show', [
             'formation' => $formation,
-            'formation_names' => Formation::toSelectFormat()
+            'formations' => Formation::toSelectFormat()
         ]);
     }
 

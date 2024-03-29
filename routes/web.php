@@ -11,7 +11,7 @@ Route::get('/home', [formationController::class, 'home'])->name('home');
 
 Route::get('/formations/show/{formation}', [formationController::class, 'show'])->name('formation.show');
 
-Route::post('/formation/register', [registerController::class, 'store'])->name('formation.register');
+Route::any('/formation/register', [registerController::class, 'store'])->name('formation.register');
 
 Route::get('/formation/register/confirmation', [registerController::class, 'confirmation'])->name('formation.register.confirmation');
 
@@ -22,12 +22,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/formations/create', [formationController::class, 'create'])->name('formation.create');
 
-
     Route::put('/formations/update/{formation}', [formationController::class, 'update'])->name('formation.update');
 
     Route::post('/formations/store', [formationController::class, 'store'])->name('formation.store');
 
     Route::get('/formations/{formation}/edit', [formationController::class, 'edit'])->name('formation.edit');
+
+    Route::get('/formation/registers', [registerController::class, 'index'])->name('formation.registers.index');
 
     Route::delete('/formations/destroy/{formation}', [formationController::class, 'destroy'])->name('formation.destroy');
 });

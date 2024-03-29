@@ -15,7 +15,7 @@ class SendMailService
         $mail = new PHPMailer(true);
 
         $mail->SMTPDebug = 0;
-        $mail->isSMTP();
+        // $mail->isSMTP();
         $mail->Host = env('MAIL_HOST');             //  smtp host
         $mail->SMTPAuth = true;
         $mail->Username = env('MAIL_USERNAME');   //  sender username
