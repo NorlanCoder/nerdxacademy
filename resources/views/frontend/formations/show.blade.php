@@ -216,7 +216,7 @@
 
             var kkiapayScript = document.getElementById('kkiapay_id');
 
-            document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="1000" 
+            document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="20000" 
                 key="b131b020ed0f11eea8be6fad86782a96"
                 position="center"
                 sandbox="true"
