@@ -103,6 +103,10 @@
                 <i class="fa-solid fa-bars text-4xl cursor-pointer text-nerdx-green"></i>
             </div>
         </header>
+        <div class="absolute lg:top-20 top-16 z-10 flex sm:justify-between justify-center items-center sm:px-16 px-12 w-full h-12 bg-[#DDFFE5]">
+            <h1 class="poppins-light sm:text-xl text-md sm:block hidden text-[#192740]"><span>Inscrivez-vous pour la journée porte ouverte<span></h1>
+            <a href="#" class="btn-action flex justify-center items-center xl:mx-80 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light attente"><span class="sm:block hidden">Aller <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
+        </div>
         @if(session('success'))
         <div class="p-4 mb-1 text-sm max-w-7xl mt-1 mx-auto text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
             <span class="font-medium">{{ session('success') }}</span>
@@ -123,18 +127,20 @@
     </main>
 
     <!-- Modal after 5sec -->
-    <div class="fixed top-0 left-0 hidden items-center justify-center h-screen bg-gray-800/30 w-screen z-50" id="modal_after_sec">
+    <div class="modal_after_sec fixed top-0 left-0 hidden items-center justify-center h-screen bg-gray-800/30 w-screen z-50" id="modal_after_sec">
         <div class="absolute right-10 top-10 cursor-pointer" onclick="closeModal('modal_after_sec')">
             <span class="bg-white rounded-full w-10 h-10 flex justify-center items-center">
                 <i class="fa fa-close text-3xl text-red-500"></i>
             </span>
         </div>
-        <div class="modal flex flex-col justify-center items-center bg-white border px-8 py-8 border-gray-200 rounded-xl">
-            <h1 class="text-center text-2xl font-black text-green-600">INSCRIPTION A LA JOURNEE PORTE OUVERTE</h1>
-            <a href="#" class="px-6 py-3 mt-5 border flex items-center border-green-600 bg-green-600 text-white rounded-md">
-                <span class="-mr-2">Aller</span>
-                <i class="fa-solid fa-arrow-right text-lg pl-4"></i>
+        <div class="modal flex w-[352.17px] flex-col justify-center items-center bg-white border px-10 py-8 border-gray-200 rounded-xl">
+            <h1 class="poppins-bold text-center text-2xl flex flex-col my-4 text-gray-800"> <span>Bienvenue à</span> NerdX Academy</h1>
+            <p class="text poppins-light text-md text-center text-gray-800 mb-4">Vous êtes invité à la journée porte ouverte du <span class="poppins-bold">06 avril 2024</span> </p>
+            <p class="text poppins-light text-md text-gray-800 text-center">Réservez vite et <span class="poppins-bold">GRATUITEMENT</span> votre place en choisissant un atelier</p>
+            <a href="#" class="px-6 py-3 my-5 border flex items-center border-green-600 bg-[#53B36A] text-white rounded-md">
+                <span class="poppins-light font-extralight">Je m'inscris</span>
             </a>
+            <h3 class="text-sm my-2 text-center">NB : 15 places disponibles par atelier !</h3>
         </div>
     </div>
     <!-- Modal -->
@@ -284,7 +290,7 @@
                 modal.classList.add("animate-fadeIn");
                 modal.classList.remove("hidden");
                 modal.classList.add("flex");
-            }, 5000); // 5000 millisecondes = 5 secondes
+            }, 5000);
         });
     </script>
 

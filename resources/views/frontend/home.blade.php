@@ -29,13 +29,13 @@
         </div>
 
         <!-- Image -->
-        <div class="flex justify-center lg:justify-end w-full lg:w-1/2">
+        <div class="flex justify-center lg:justify-end z-20 w-full lg:w-1/2">
             <img src="./assets/school-happy.png" alt="Nerdx Jeune Etudiante Contente" class="w-5/6 lg:w-[32.5vw] lg:h-[32.8vw]" />
         </div>
     </div>
 
     <!-- Button offre -->
-    <div class="flex xl:justify-center w-full overflow-x-auto pl-10 lg:pl-0 scrollable-content relative h-[65px] lg:mb-0 lg:mt-10 mt-0 mb-2">
+    <div class="flex justify-center w-full overflow-x-auto pl-10 lg:pl-0 scrollable-content relative h-[65px] lg:mb-0 lg:mt-10 mt-0 mb-2">
         @foreach($formations as $formation)
         <a href="{{ route('formation.show',$formation->id) }}" class="btn-offre">{{$formation->name}}</a>
         @endforeach
