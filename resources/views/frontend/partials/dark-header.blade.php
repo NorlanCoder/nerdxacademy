@@ -13,11 +13,11 @@
         <a href="" class="text-lg poppins-light">Communauté</a>
         <a href="" onclick="openModal('modal')" class="btn-action text-lg poppins-light signup" id="signup1">S'inscrire</a>
         @auth
-        <form method="POST" class="h-full flex items-center pt-10" action="{{ route('logout') }}">
+        <form method="POST" class="h-full flex " action="{{ route('logout') }}">
             @csrf
             <a href="route('logout')" class="hover:text-red-500" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                Se déconnecter
+                Déconnexion
             </a>
         </form>
         @endauth

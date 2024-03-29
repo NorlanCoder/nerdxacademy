@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('dist/main.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
     <script src="https://cdn.kkiapay.me/k.js"></script>
+    @vite('resources/css/app.css')
 
 
     <!-- Meta Pixel Code -->
@@ -52,7 +53,7 @@
                     <img src="./assets/logo1.png" alt="Nerdx Academy Logo" class="h-[65px]" />
                 </a>
             </div>
-            <nav class="items-center gap-x-16 hidden lg:flex">
+            <nav class="items-center gap-x-10 hidden lg:flex">
                 @auth
                 <a href="{{route('index')}}" class="text-lg poppins-light">Admin</a>
                 @endauth
@@ -61,11 +62,11 @@
                 <a href="" class="text-lg poppins-light">Communauté</a>
                 <a href="" class="btn-action w-max text-lg poppins-light attente">S'inscrire</a>
                 @auth
-                <form method="POST" class="h-full flex items-center pt-10" action="{{ route('logout') }}">
+                <form method="POST" class="h-full" action="{{ route('logout') }}">
                     @csrf
                     <a href="route('logout')" class="hover:text-red-500" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        Se déconnecter
+                        Déconnexion
                     </a>
                 </form>
                 @endauth
@@ -121,6 +122,21 @@
         @include('frontend.partials.footer')
     </main>
 
+    <!-- Modal after 5sec -->
+    <div class="fixed top-0 left-0 hidden items-center justify-center h-screen bg-gray-800/30 w-screen z-50" id="modal_after_sec">
+        <div class="absolute right-10 top-10 cursor-pointer" onclick="closeModal('modal_after_sec')">
+            <span class="bg-white rounded-full w-10 h-10 flex justify-center items-center">
+                <i class="fa fa-close text-3xl text-red-500"></i>
+            </span>
+        </div>
+        <div class="modal flex flex-col justify-center items-center bg-white border px-8 py-8 border-gray-200 rounded-xl">
+            <h1 class="text-center text-2xl font-black text-green-600">INSCRIPTION A LA JOURNEE PORTE OUVERTE</h1>
+            <a href="#" class="px-6 py-3 mt-5 border flex items-center border-green-600 bg-green-600 text-white rounded-md">
+                <span class="-mr-2">Aller</span>
+                <i class="fa-solid fa-arrow-right text-lg pl-4"></i>
+            </a>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="fixed top-0 left-0 hidden flex-row items-center justify-center h-screen bg-gray-800/30 w-screen overflow-y-auto z-50" id="modal">
         <div class="absolute right-10 top-10 m-auto cursor-pointer" onclick="closeModal('modal')">
@@ -261,12 +277,20 @@
                 document.getElementById(modalId).classList.add("hidden");
             };
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var modal = document.getElementById('modal_after_sec');
+                modal.classList.add("animate-fadeIn");
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+            }, 5000); // 5000 millisecondes = 5 secondes
+        });
     </script>
 
     <script>
         function info() {
             var first_name = document.getElementById('first_name').value
-            console.log(first_name)
 
             var last_name = document.getElementById('last_name').value
             var phone_number = document.getElementById('phone_number').value
