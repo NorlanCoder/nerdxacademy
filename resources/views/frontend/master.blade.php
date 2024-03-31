@@ -137,7 +137,7 @@
             <h1 class="poppins-bold text-center text-2xl flex flex-col my-4 text-gray-800"> <span>Bienvenue à</span> NerdX Academy</h1>
             <p class="text poppins-light text-md text-center text-gray-800 mb-4">Vous êtes invité à la journée porte ouverte du <span class="poppins-bold">06 avril 2024</span> </p>
             <p class="text poppins-light text-md text-gray-800 text-center">Réservez vite et <span class="poppins-bold">GRATUITEMENT</span> votre place en choisissant un atelier</p>
-            <a href="#" class="px-6 py-3 my-5 border flex items-center border-green-600 bg-[#53B36A] text-white rounded-md">
+            <a href="https://bit.ly/3IWXpTh" class="px-6 py-3 my-5 border flex items-center border-green-600 bg-[#53B36A] text-white rounded-md">
                 <span class="poppins-light font-extralight">Je m'inscris</span>
             </a>
             <h3 class="text-sm my-2 text-center">NB : 15 places disponibles par atelier !</h3>
