@@ -315,9 +315,8 @@
             var kkiapayScript = document.getElementById('kkiapay_id');
 
             document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="20000" 
-                key="b131b020ed0f11eea8be6fad86782a96"
+                key="82ab6b09a76f5d6671fed8fab03fad066d7e08ca"
                 position="center"
-                sandbox="true"
                 name="${first_name +' '+ last_name}"
                 data=${JSON.stringify(data)}
                 email=${email}

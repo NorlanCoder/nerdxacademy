@@ -38,7 +38,7 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="h-auto lg:h-screen bg-nerdx-blue text-white bg-no-repeat bg-cover">
+<body class="h-auto lg:h-screen bg-nerdx-blue bg-hero-pattern text-white bg-no-repeat bg-cover">
     <main class="h-full relative ">
         @include('frontend.partials.dark-header')
         <div class="bg-white text-black mt-4 md:mt-0">
@@ -217,9 +217,8 @@
             var kkiapayScript = document.getElementById('kkiapay_id');
 
             document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="20000" 
-                key="b131b020ed0f11eea8be6fad86782a96"
+                key="82ab6b09a76f5d6671fed8fab03fad066d7e08ca"
                 position="center"
-                sandbox="true"
                 name="${first_name +' '+ last_name}"
                 data=${JSON.stringify(data)}
                 email=${email}

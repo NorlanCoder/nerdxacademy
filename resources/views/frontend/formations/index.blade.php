@@ -15,8 +15,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <link rel="stylesheet" href="public/build/assets/app-hgMWdxu6.css">
-    <script src="public/build/assets/app-mqEmiGqA.js"></script>
+    @vite('resources/css/app.css')
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
@@ -46,8 +45,8 @@
 
 <body>
     <main class="h-full text-white relative ">
-        @include('frontend.partials.dark-header')
 
+        @include('frontend.partials.dark-header')
 
         <div class="relative overflow-x-auto mx-12 my-10 py-6 shadow-md sm:rounded-lg">
             <div class="flex justify-between">
