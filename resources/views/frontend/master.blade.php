@@ -103,9 +103,9 @@
                 <i class="fa-solid fa-bars text-4xl cursor-pointer text-nerdx-green"></i>
             </div>
         </header>
-        <div class="absolute lg:top-20 top-16 z-10 flex sm:justify-between justify-center items-center sm:px-16 px-12 w-full h-12 bg-[#DDFFE5]">
+        <div class="absolute lg:top-20 top-16 z-10 flex sm:justify-start justify-center items-center sm:px-16 px-12 w-full h-12 bg-[#DDFFE5]">
             <h1 class="poppins-light sm:text-xl text-md sm:block hidden text-[#192740]"><span>Inscrivez-vous pour la journée porte ouverte<span></h1>
-            <a href="https://bit.ly/3IWXpTh" target="_blank" class="btn-action flex justify-center items-center xl:mx-80 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">Aller <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
+            <a href="https://bit.ly/3IWXpTh" target="_blank" class="btn-action flex justify-center items-center xl:mx-4 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">Je m'inscris <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
         </div>
         @if(session('success'))
         <div class="p-4 mb-1 text-sm max-w-7xl mt-1 mx-auto text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -192,6 +192,7 @@
                 </select>
                 <x-input-error :messages="$errors->get('formation')" class="mt-2" />
             </div>
+            <h3 class="text-md text-[#192740] my-6 text-left"> <span class="text-red-400">*</span> Frais d'inscription: <span class="poppins-bold">20.000 FCFA</span> </h3>
             <div id="kkia"></div>
         </div>
     </div>

@@ -9,7 +9,7 @@ Route::get('/', [formationController::class, 'home']);
 
 Route::get('/home', [formationController::class, 'home'])->name('home');
 
-Route::get('/formations/show/{formation}', [formationController::class, 'show'])->name('formation.show');
+Route::get('/formations/{formation}', [formationController::class, 'show'])->name('formation.show');
 
 Route::any('/formation/register', [registerController::class, 'store'])->name('formation.register');
 

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset('dist/main.css') }}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
     <script src="https://cdn.kkiapay.me/k.js"></script>
-    <!-- Meta Pixel Code -->
     @vite('resources/css/app.css')
+    <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -38,14 +38,14 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="h-auto lg:h-screen bg-nerdx-blue text-white bg-hero-pattern bg-no-repeat bg-cover">
+<body class="h-auto lg:h-screen bg-nerdx-blue text-white bg-no-repeat bg-cover">
     <main class="h-full relative ">
         @include('frontend.partials.dark-header')
         <div class="bg-white text-black mt-4 md:mt-0">
             <div class="h-auto md:py-4 py-2 inline-flex md:text-base text-xs px-[24px] md:px-[61px] md:gap-x-4 gap-x-2">
                 <p><a href="{{route('home')}}" class="cursor-pointer">Formations</a></p>
                 <p>></p>
-                <p>Développeur WordPress</p>
+                <p>{{ $formation->name }}</p>
             </div>
         </div>
         <section class="h-auto  px-[30px] md:px-[61px]  flex flex-col-reverse lg:flex-row justify-center items-start gap-y-5 pt-8 md:gap-x-32 pb-10">
@@ -63,21 +63,21 @@
                         la Formation</h2>
                         <ul class="my-3 list-disc pl-4">
                             <li class="">
-                                <h4 class="text-white poppins-light"><span class="font-extrabold poppins-regular text-slate-300 underline">Intitulé</span> : {{$formation->label}}
+                                <h4 class="text-white font-extrabold poppins-regular"><span class=" text-slate-300 underline">Intitulé</span> : <span class=" poppins-light font-thin"> {{$formation->label}} </span>
                                 </h4>
                             </li>
                             <li class="">
-                                <h4 class="text-white poppins-light"><span class="font-extrabold poppins-regular text-slate-300 underline">Durée</span> : {{ $formation->duration }} </h4>
+                                <h4 class="text-white font-extrabold poppins-regular"><span class=" text-slate-300 underline">Durée</span> : <span class=" poppins-light font-thin"> {{ $formation->duration }} </span></h4>
 
                             </li>
                             <li class="">
-                                <h4 class="text-white poppins-light"><span class="font-extrabold poppins-regular text-slate-300 underline">Format</span> : {{ $formation->format }} </h4>
+                                <h4 class="text-white font-extrabold poppins-regular"><span class=" text-slate-300 underline">Format</span> : <span class=" poppins-light font-thin"> {{ $formation->format }} </span></h4>
                             </li>
                             <li class="">
-                                <h4 class="text-white poppins-light"><span class="font-extrabold poppins-regular text-slate-300 underline">Lieu</span> : {{ $formation->adress }} </h4>
+                                <h4 class="text-white font-extrabold poppins-regular"><span class=" text-slate-300 underline">Lieu</span> : <span class=" poppins-light font-thin"> {{ $formation->adress }} </span></h4>
                             </li>
                             <li class="">
-                                <h4 class="text-white poppins-light"><span class="font-extrabold poppins-regular text-slate-300 underline">Langue</span> : {{ $formation->language }} </h4>
+                                <h4 class="text-white font-extrabold poppins-regular"><span class=" text-slate-300 underline">Langue</span> : <span class=" poppins-light font-thin"> {{ $formation->language }} </span></h4>
                             </li>
                         </ul>
                 </div>
