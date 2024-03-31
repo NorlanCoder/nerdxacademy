@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\formationController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\registerController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\formationController;
 
 Route::get('/', [formationController::class, 'home']);
 
@@ -15,6 +16,14 @@ Route::any('/formation/register', [registerController::class, 'store'])->name('f
 
 Route::get('/formation/register/confirmation', [registerController::class, 'confirmation'])->name('formation.register.confirmation');
 
+Route::get('/create-storage-link', function () {
+    try {
+        Artisan::call('storage:link');
+        return 'Le lien de stockage a été créé avec succès !';
+    } catch (Exception $e) {
+        return 'Une erreur est survenue lors de la création du lien de stockage : ' . $e->getMessage();
+    }
+});
 
 Route::middleware('auth')->group(function () {
 

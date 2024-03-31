@@ -29,7 +29,7 @@
         </div>
 
         <!-- Image -->
-        <div class="flex justify-center lg:justify-end z-20 w-full lg:w-1/2">
+        <div class="flex justify-center lg:justify-end z-10 w-full lg:w-1/2">
             <img src="./assets/school-happy.png" alt="Nerdx Jeune Etudiante Contente" class="w-5/6 lg:w-[32.5vw] lg:h-[32.8vw]" />
         </div>
     </div>
