@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('presentation')
-<section class="h-auto lg:h-[calc(100vh-90px)] px-[30px] md:px-[61px] flex flex-col justify-center gap-y-5 relative pb-8 lg:pt-0 pt-6">
+<section class="h-auto px-[30px] md:px-[61px] flex flex-col justify-center gap-y-5 relative pb-8 lg:pt-0 pt-6">
     <div class="lg:h-[100%-60px] flex flex-col justify-between items-center lg:flex-row xl:mb-0">
         <!-- Contenu principal  -->
         <div class="h-full flex flex-col justify-center w-screen lg:w-1/2 lg:px-0 px-5">
