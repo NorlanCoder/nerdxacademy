@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="{{asset('dist/main.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
     <script src="https://cdn.kkiapay.me/k.js"></script>
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="public/build/assets/app-hgMWdxu6.css">
+    <script src="public/build/assets/app-mqEmiGqA.js"></script>
+    <!-- @vite('resources/css/app.css') -->
 
 
     <!-- Meta Pixel Code -->
@@ -135,7 +137,7 @@
         </div>
         <div class="modal flex w-[352.17px] flex-col justify-center items-center bg-white border px-10 py-8 border-gray-200 rounded-xl">
             <h1 class="poppins-bold text-center text-2xl flex flex-col my-4 text-gray-800"> <span>Bienvenue à</span> NerdX Academy</h1>
-            <p class="text poppins-light text-md text-center text-gray-800 mb-4">Vous êtes invité à la journée porte ouverte du <span class="poppins-bold">06 avril 2024</span> </p>
+            <p class="text poppins-light text-md text-center text-gray-800 mb-4">Vous êtes invité à la journée porte ouverte du <span class="poppins-bold">20 avril 2024</span> </p>
             <p class="text poppins-light text-md text-gray-800 text-center">Réservez vite et <span class="poppins-bold">GRATUITEMENT</span> votre place en choisissant un atelier</p>
             <a href="https://bit.ly/3IWXpTh" target="_blank" class="px-6 py-3 my-5 border flex items-center border-green-600 bg-[#53B36A] text-white rounded-md">
                 <span class="poppins-light font-extralight">Je m'inscris</span>
@@ -320,7 +322,7 @@
                 name="${first_name +' '+ last_name}"
                 data=${JSON.stringify(data)}
                 email=${email}
-                callback={{route('formation.register')}}>
+                callback="{{route('formation.register')}}">
             </kkiapay-widget>`
 
 

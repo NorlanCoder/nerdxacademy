@@ -39,17 +39,20 @@ class registerController extends Controller
         // ]);
 
         DB::beginTransaction();
-        $kkiapay = new Kkiapay('82ab6b09a76f5d6671fed8fab03fad066d7e08ca', 'pk_e410c55f15c865de13134116defd5d7898cfdacc7118f2f36a46973ac442961a', 'sk_97548f7e6c809b83d8643c7fe25375381ef20ebde8fd77a0bbc1c5b55f972d70');
-        // dd($kkiapay->verifyTransaction($request->transaction_id));
+        $kkiapay = new Kkiapay('82ab6b09a76f5d6671fed8fab03fad066d7e08ca', 'pk_e410c55f15c865de13134116defd5d7898cfdacc7118f2f36a46973ac442961a', 'sk_97548f7e6c809b83d8643c7fe25375381ef20ebde8fd77a0bbc1c5b55f972d70'); // dd($kkiapay->verifyTransaction($request->transaction_id));
 
         $transaction = $kkiapay->verifyTransaction($request->transaction_id);
-
         if (strtolower($transaction->status) != 'success') {
-            return back()->with('danger', 'Une erreur est survenue lors de la transaction ' . $transaction->reason);
+            return view(
+                'frontend.formations.error'
+            );
         }
-
         // dd(env('MAIL_USERNAME'));
         $req = $transaction->state;
+        $string = json_encode($req);
+        if (substr($string, -1) != '}') {
+            $req = json_decode(json_decode($string) . '"}');
+        }
 
         // dd($req);
 

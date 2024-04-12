@@ -4,10 +4,15 @@
 <section class="h-auto px-[30px] md:px-[61px] flex flex-col justify-center gap-y-5 relative pb-8 lg:pt-0 pt-6">
     <div class="lg:h-[100%-60px] flex flex-col justify-between items-center lg:flex-row xl:mb-0">
         <!-- Contenu principal  -->
+        @if ($errors->all())
+        <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+            <span class="font-medium">{{$message}}</span>
+        </div>
+        @endif
         <div class="h-full flex flex-col justify-center w-screen lg:w-1/2 lg:px-0 px-5">
             <h3 class="flex items-center gap-x-1 lg:text-3xl lg:text-left lg:justify-start justify-center w-full sm:text-[1vw] text-nerdx-green mb-6">
                 <span class="dot"></span> <span class="dot"></span>
-                <span class="pl-1 font-semibold">Prochaine rentrée : 8 Avril 2024</span>
+                <span class="pl-1 font-semibold">Prochaine rentrée : 29 Avril 2024</span>
             </h3>
             <h1 class="md:text-[3vw] text-[25px] sm:text-[1.5vw] xl:text-[4vw] lg:text-left text-center font-bold w-full leading-tight text-[#192740]">
                 100% ORIENTEE EMPLOI
