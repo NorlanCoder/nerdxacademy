@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="{{asset('dist/main.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
     <script src="https://cdn.kkiapay.me/k.js"></script>
-    <link rel="stylesheet" href="{{asset('public/build/assets/app-D3K3j3MD.css')}}">
+    <link rel="stylesheet" href="{{asset('public/build/assets/app-CyccxUnb.css')}}">
     <script src="{{asset('public/build/assets/app-mqEmiGqA.js')}}"></script>
-    <!-- @vite('resources/css/app.css') -->
 
 
     <!-- Meta Pixel Code -->

@@ -15,9 +15,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <link rel="stylesheet" href="{{asset('public/build/assets/app-D3K3j3MD.css')}}">
+    <link rel="stylesheet" href="{{asset('public/build/assets/app-CyccxUnb.css')}}">
     <script src="{{asset('public/build/assets/app-mqEmiGqA.js')}}"></script>
-    <!-- @vite('resources/css/app.css') -->
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
