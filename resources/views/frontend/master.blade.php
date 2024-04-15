@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{asset('dist/main.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/style.css')}}" />
     <script src="https://cdn.kkiapay.me/k.js"></script>
-    <link rel="stylesheet" href="public/build/assets/app-hgMWdxu6.css">
-    <script src="public/build/assets/app-mqEmiGqA.js"></script>
+    <link rel="stylesheet" href="{{asset('public/build/assets/app-D3K3j3MD.css')}}">
+    <script src="{{asset('public/build/assets/app-mqEmiGqA.js')}}"></script>
     <!-- @vite('resources/css/app.css') -->
 
 
@@ -316,7 +316,7 @@
 
             var kkiapayScript = document.getElementById('kkiapay_id');
 
-            document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="20000" 
+            document.getElementById('kkia').innerHTML = `<kkiapay-widget amount="1" 
                 key="82ab6b09a76f5d6671fed8fab03fad066d7e08ca"
                 position="center"
                 name="${first_name +' '+ last_name}"
