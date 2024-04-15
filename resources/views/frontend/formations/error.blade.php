@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('public/build/assets/app-D3K3j3MD.css')}}">
     <script src="{{asset('public/build/assets/app-mqEmiGqA.js')}}"></script>
+
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
@@ -55,12 +56,12 @@
 <body class="flex justify-center items-center h-screen text-center">
     <div class="mx-auto max-w-lg">
         <div class="pt-16">
-            <i class="fa-regular fa-circle-check text-nerdx-green text-4xl"></i>
+            <i class="fa-solid fa-circle-xmark text-red-500 text-4xl"></i>
         </div>
 
         <div class="py-8">
-            <p class="font-bold text-4xl mb-7">Demande d'inscription envoyée avec succès</p>
-            <p class="text-xl">Vous serez contacter ultérieurement pour la confirmation de votre inscription</p>
+            <p class="font-bold text-4xl mb-7">Demande d'inscription envoyée non envoyée</p>
+            <p class="text-xl">Payement non effectué. Reésayez svp</p>
         </div>
 
         <div class="text-center mt-10">
