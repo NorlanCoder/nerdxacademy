@@ -19,16 +19,16 @@ Route::get('/formation/register/confirmation', [registerController::class, 'conf
 Route::get('/clear', function () {
 
     Artisan::call('route:clear');
-    Artisan::call('storage:link', [] );
+    Artisan::call('storage:link', []);
 });
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/index', [formationController::class, 'index'])->name('index');
 
-    Route::get('/formations/create', [formationController::class, 'create'])->name('formation.create');
-
     Route::put('/formations/update/{formation}', [formationController::class, 'update'])->name('formation.update');
+
+    Route::get('/formation/create', [formationController::class, 'create'])->name('formation.create');
 
     Route::post('/formations/store', [formationController::class, 'store'])->name('formation.store');
 

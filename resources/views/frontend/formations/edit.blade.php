@@ -18,9 +18,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-<link rel="stylesheet" href="{{asset('build/assets/app-CyccxUnb.css')}}">
+    <link rel="stylesheet" href="{{asset('build/assets/app-CyccxUnb.css')}}">
     <script src="{{asset('build/assets/app-mqEmiGqA.js')}}"></script>
-    {{--  @vite('resources/css/app.css')  --}}
+    {{-- @vite('resources/css/app.css')  --}}
     <!-- Meta Pixel Code -->
     <script>
         ! function(f, b, e, v, n, t, s) {
@@ -126,8 +126,8 @@
             </button>
         </form>
     </main>
-    <script>
-        $('#summernote').summernote({
+    <script type="module">
+        jQuery('#summernote').summernote({
             placeholder: '',
             tabsize: 2,
             height: 300

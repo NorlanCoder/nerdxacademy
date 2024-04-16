@@ -68,11 +68,11 @@ class registerController extends Controller
 
         $send_mail_service = new SendMailService();
 
-        $body = "Nom: " . utf8_encode($request->lastname) . "<br>";
-        $body .= "Prénom: " . utf8_encode($request->firstname) . "<br>";
-        $body .= "Email: " . utf8_encode($request->email) . "<br>";
-        $body .= "Téléphone: " . utf8_encode($request->phone) . "<br>";
-        $body .= "Formation: " . utf8_encode($request->formation) . "<br>";
+        $body = "Nom: " . utf8_encode($req->last_name) . "<br>";
+        $body .= "Prénom: " . utf8_encode($req->first_name) . "<br>";
+        $body .= "Email: " . utf8_encode($req->email) . "<br>";
+        $body .= "Téléphone: " . utf8_encode($req->phone_number) . "<br>";
+        $body .= "Formation: " . utf8_encode($req->formation) . "<br>";
 
         $send_mail_service->sendMail($body);
         DB::commit();
