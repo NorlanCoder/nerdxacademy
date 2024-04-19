@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\formationController;
@@ -37,6 +38,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/formation/registers', [registerController::class, 'index'])->name('formation.registers.index');
 
     Route::delete('/formations/destroy/{formation}', [formationController::class, 'destroy'])->name('formation.destroy');
+});
+
+Route::get('/clear', function () {
+    Storage::deleteDirectory('public');
+    Storage::makeDirectory('public');
+
+    Artisan::call('route:clear');
+    Artisan::call('storage:link', []);
 });
 
 
