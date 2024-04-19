@@ -66,7 +66,17 @@ class registerController extends Controller
 
         // dd($register);
 
-        $send_mail_service = new SendMailService();
+        $register = Register::create([
+            'first_name' => $req->first_name,
+            'last_name' => $req->last_name,
+            'phone_number' => $req->phone_number,
+            'email' => $req->email,
+            'formation' => $req->formation
+        ]);
+
+        // dd($register);
+
+        // $send_mail_service = new SendMailService();
 
         $body = "Nom: " . utf8_encode($req->last_name) . "<br>";
         $body .= "Prénom: " . utf8_encode($req->first_name) . "<br>";
@@ -74,7 +84,28 @@ class registerController extends Controller
         $body .= "Téléphone: " . utf8_encode($req->phone_number) . "<br>";
         $body .= "Formation: " . utf8_encode($req->formation) . "<br>";
 
-        $send_mail_service->sendMail($body);
+        // $send_mail_service->sendMail($body);
+
+        require base_path("vendor/autoload.php");
+        $mail = new PHPMailer(true);
+
+        $mail->SMTPDebug = 0;
+        $mail->isSMTP();
+        $mail->Host = env('MAIL_HOST');             //  smtp host
+        $mail->SMTPAuth = true;
+        $mail->Username = env('MAIL_USERNAME');   //  sender username
+        $mail->Password = env('MAIL_PASSWORD');       // sender password
+        $mail->SMTPSecure = 'tls';                  // encryption - ssl/tls
+        $mail->Port = 587;                          // port - 587/465
+
+        $mail->setFrom(env('MAIL_FROM_ADDRESS'), 'NERDX ACADEMY');
+        $mail->addAddress('academy@nerdxdigital.com');
+        $mail->isHTML(true);                // Set email content format to HTML
+
+        $mail->Subject = "Inscription à NerdXAcademy";
+        $mail->Body= $body;
+        $success = $mail->send();
+        
         DB::commit();
 
         return redirect()->route('formation.register.confirmation');
