@@ -34,7 +34,7 @@
             @auth
             <a href="{{route('index')}}" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">Admin</a>
             @endauth
-            <a href="/accueil#formations" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">Formations</a>
+            <a href="{{route('home').'#formations'}}" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">Formations</a>
             <a href="" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">A propos</a>
             <a href="" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">Communauté</a>
             <a href="" onclick="openModal('modal')" class="btn-action text-lg text-black poppins-light signup" id="signup2">S'inscrire</a>

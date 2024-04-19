@@ -85,7 +85,7 @@
                     @auth
                     <a href="{{route('index')}}" class="text-lg poppins-light text-black hover:bg-slate-200 p-3 rounded-lg">Admin</a>
                     @endauth
-                    <a href="{{route('home')}}" class="text-lg poppins-light hover:bg-slate-200 p-3 rounded-lg">Formations</a>
+                    <a href="{{route('home').'#formations'}}" class="text-lg poppins-light hover:bg-slate-200 p-3 rounded-lg">Formations</a>
                     <a href="" class="text-lg poppins-light hover:bg-slate-200 p-3 rounded-lg">A propos</a>
                     <a href="" class="text-lg poppins-light hover:bg-slate-200 p-3 rounded-lg">Communauté</a>
                     <a href="" class="btn-action text-lg poppins-light signup" id="signup2">S'inscrire</a>
@@ -107,7 +107,7 @@
         </header>
         <div class="absolute lg:top-20 top-16 z-10 flex sm:justify-start justify-center items-center sm:px-16 px-12 w-full h-12 bg-[#DDFFE5]">
             <h1 class="poppins-light sm:text-xl text-md sm:block hidden text-[#192740]"><span>Inscrivez-vous pour la journée porte ouverte<span></h1>
-            <a href="https://bit.ly/3IWXpTh" target="_blank" class="btn-action flex justify-center items-center xl:mx-4 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">Je m'inscris <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
+            <a href="https://bit.ly/3IWXpTh" target="_blank" class="btn-action flex justify-center items-center xl:mx-4 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">Je m'inscris <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block whitespace-nowrap">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
         </div>
         @if(session('success'))
         <div class="p-4 mb-1 text-sm max-w-7xl mt-1 mx-auto text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
