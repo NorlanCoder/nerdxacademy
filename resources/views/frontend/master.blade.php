@@ -106,8 +106,8 @@
             </div>
         </header>
         <div class="absolute lg:top-20 top-16 z-10 flex sm:justify-start justify-center items-center sm:px-16 px-12 w-full h-12 bg-[#DDFFE5]">
-            <h1 class="poppins-light sm:text-xl text-md sm:block hidden text-[#192740]"><span>Inscrivez-vous pour la journée porte ouverte<span></h1>
-            <a href="https://bit.ly/3IWXpTh" target="_blank" class="btn-action flex justify-center items-center xl:mx-4 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">Je m'inscris <i class="fa-solid fa-arrow-right text-lg pl-4"></i></span><span class="sm:hidden block whitespace-nowrap">Journée porte ouverte<i class="fa-solid fa-arrow-right text-lg pl-4"></i></span></a>
+            <h1 class="poppins-light sm:text-xl text-md sm:block hidden text-[#192740]"><span>Quelque chose se prépare...<span></h1>
+            <a href="https://bit.ly/3IWXpTh" target="_blank" onclick="openModal('modal_after_sec')" class="btn-action flex justify-center items-center xl:mx-4 md:mx:6 sm:w-max w-auto h-9 px-6 text-lg poppins-light"><span class="sm:block hidden">En savoir plus</span><span class="sm:hidden block">Nouveautés</span></a>
         </div>
         @if(session('success'))
         <div class="p-4 mb-1 text-sm max-w-7xl mt-1 mx-auto text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -129,20 +129,26 @@
     </main>
 
     <!-- Modal after 5sec -->
-    <div class="modal_after_sec fixed top-0 left-0 hidden items-center justify-center h-screen bg-gray-800/30 w-screen z-50" id="modal_after_sec">
+    <div class="modal_after_sec fixed top-0 left-0 hidden items-center px-11 justify-center h-screen bg-gray-800/30 w-screen z-50" id="modal_after_sec">
         <div class="absolute right-10 top-10 cursor-pointer" onclick="closeModal('modal_after_sec')">
             <span class="bg-white rounded-full w-10 h-10 flex justify-center items-center">
                 <i class="fa fa-close text-3xl text-red-500"></i>
             </span>
         </div>
-        <div class="modal flex w-[352.17px] flex-col justify-center items-center bg-white border px-10 py-8 border-gray-200 rounded-xl">
-            <h1 class="poppins-bold text-center text-2xl flex flex-col my-4 text-gray-800"> <span>Bienvenue à</span> NerdX Academy</h1>
-            <p class="text poppins-light text-md text-center text-gray-800 mb-4">Vous êtes invité à la journée porte ouverte du <span class="poppins-bold">20 avril 2024</span> </p>
-            <p class="text poppins-light text-md text-gray-800 text-center">Réservez vite et <span class="poppins-bold">GRATUITEMENT</span> votre place en choisissant un atelier</p>
-            <a href="https://bit.ly/3IWXpTh" target="_blank" class="px-6 py-3 my-5 border flex items-center border-green-600 bg-[#53B36A] text-white rounded-md">
-                <span class="poppins-light font-extralight">Je m'inscris</span>
-            </a>
-            <h3 class="text-sm my-2 text-center">NB : 15 places disponibles par atelier !</h3>
+        <div class="modal m-24 border bg-slate-600 border-green-600 rounded-xl" style="background: url('./img5.jpeg');background-position: center; background-size: cover ">
+            <div class="w-full h-full flex flex-col justify-center items-center py-8 rounded-xl" style="background-color: rgba(15, 15, 15, 0.68); padding:100px">
+                <h1 class=" poppins-bold text-center items-center text-2xl flex gap-7 my-6 text-white whitespace-nowrap">
+                    <span> <img src="./assets/logo2.webp" class="mx-10" style="width:200px" /> </span>
+                    <span class="text-green-600 text-4xl">&</span>
+                    <span><img src="./assets/fac du dev.png" class="mx-20" style="width:200px" /> </span>
+                </h1>
+                <p class=" text-2xl poppins-light text-md text-center text-white">Les prémices d'un événement <span class="poppins-bold">se profilent </span> </p>
+                <!-- <p class="text poppins-light text-md text-gray-800 text-center">Réservez vite et <span class="poppins-bold">GRATUITEMENT</span> votre place en choisissant un atelier</p> -->
+                <p class="px-5 py-1 items-center  text-green-600" style="text-decoration: solid #fff;">
+                    <span class="text-2xl poppins-bold whitespace-nowrap">en coulisse</span>
+                </p>
+                <!-- <h3 class="text-sm my-2 text-center">NB : 15 places disponibles par atelier !</h3> -->
+            </div>
         </div>
     </div>
     <!-- Modal -->
@@ -293,7 +299,7 @@
                 modal.classList.add("animate-fadeIn");
                 modal.classList.remove("hidden");
                 modal.classList.add("flex");
-            }, 5000);
+            }, 1000);
         });
     </script>
 
