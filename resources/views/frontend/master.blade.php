@@ -147,7 +147,8 @@
                 <p class="px-5 py-1 items-center  text-green-600" style="text-decoration: solid #fff;">
                     <span class="text-2xl poppins-bold whitespace-nowrap">en coulisse</span>
                 </p>
-                <!-- <h3 class="text-sm my-2 text-center">NB : 15 places disponibles par atelier !</h3> -->
+                <a href="https://kloo.me/dicday" target="_blank" class="text-green-600 px-6 py-2 bg-white border border-gray-600 rounded-sm mt-4">En savoir plus</a>
+                <h3 class="text-sm mt-6 text-center text-white">Osez le défi et découvrez le pouvoir de votre potentiel!</h3>
             </div>
         </div>
     </div>
